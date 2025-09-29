@@ -1,11 +1,11 @@
-## Job Application Copilot
+## LearnWise AI
 
-Multi-agent web app to automate end-to-end job applications.
+Your personal AI learning assistant that adapts to your learning style and helps you master new skills through intelligent course recommendations and personalized learning paths.
 
 ### Tech Stack
 - Next.js (App Router) + TypeScript + TailwindCSS
 - API routes (Node 18+)
-- MongoDB (Mongoose), Redis, LangGraph (planned), Playwright (planned)
+- MongoDB (Mongoose), Redis, LangGraph (planned)
 
 ### Getting Started
 1. Copy envs:
@@ -63,16 +63,16 @@ Endpoints:
 Step 2 will add MongoDB models, connection utilities, and initial schemas.
 
 ### Core API Endpoints
-- `GET /api/jobs/list?q=` – list jobs (auth)
-- `POST /api/jobs/scrape` – create placeholder job (mentor/admin)
-- `POST /api/analyze` – returns `{ match }` score (auth)
-- `POST /api/resume/tailor` – returns `{ resume }` tailored text (auth)
-- `POST /api/coverletter/generate` – returns `{ cover_letter }` (auth)
-- `POST /api/apply/submit` – create submitted application (auth)
-- `GET /api/applications/history` – list user’s applications with job info (auth)
-- `GET /api/mentor/overview` – basic stats (mentor/admin)
+- `GET /api/courses/list?category=&difficulty=` – list available courses (auth)
+- `POST /api/courses/create` – create new course (instructor/admin)
+- `POST /api/learn/analyze` – analyze learning progress and get recommendations (auth)
+- `POST /api/learn/adapt` – adapt content based on learning style (auth)
+- `POST /api/enroll` – enroll in a course (auth)
+- `GET /api/enrollments/history` – list user's enrollments with progress (auth)
+- `GET /api/instructor/overview` – teaching stats (instructor/admin)
+- `POST /api/learn/complete-lesson` – mark lesson as completed (auth)
 
-### Orchestration
+### AI Learning Features
 - Redis URL in `.env.local`: `REDIS_URL=redis://localhost:6379`
-- Start pipeline: `POST /api/orchestrate/start` with `{ jobId }` (auth)
-- Logs stored in `Logs` collection
+- Start learning session: `POST /api/learn/start` with `{ courseId }` (auth)
+- Learning logs and progress tracking stored in `Logs` collection

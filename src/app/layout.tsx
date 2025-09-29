@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Job Application Copilot",
-  description: "Multi-agent system to automate job applications",
+  title: "LearnWise AI",
+  description: "Your personal AI learning assistant for skill development and knowledge mastery",
 };
 
 export default function RootLayout({
